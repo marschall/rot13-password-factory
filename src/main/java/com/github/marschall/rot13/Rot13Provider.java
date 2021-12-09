@@ -19,7 +19,7 @@ public class Rot13Provider extends Provider {
   public Rot13Provider() {
     super("Rot13Provider", "1.0", "ROT-13 Password Provider");
     putService(new Service(this, PASSWORD_FACTORY_TYPE, Rot13Password.ALGORITHM_ROT_13,
-        Rot13PasswordImpl.class.getName(), List.of(), Map.of()));
+        Rot13PasswordFactory.class.getName(), List.of(), Map.of()));
   }
 
   /**
