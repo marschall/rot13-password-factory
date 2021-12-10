@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.github.marschall</groupId>
-  <artifactId>rot13-password-provider</artifactId>
+  <artifactId>rot13-password-factory</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <inceptionYear>2021</inceptionYear>
-  <url>https://github.com/marschall/rot13-password-provider</url>
-  <name>ROT-13 PasswordProvider</name>
-  <description>A PasswordProvider that implements ROT-13.</description>
+  <url>https://github.com/marschall/rot13-password-factory</url>
+  <name>ROT-13 PasswordFactory</name>
+  <description>A PasswordFactory that implements ROT-13.</description>
 
   <developers>
     <developer>
@@ -33,17 +33,17 @@
 
   <ciManagement>
     <system>Travis</system>
-    <url>https://travis-ci.org/marschall/rot13-password-provider</url>
+    <url>https://travis-ci.org/marschall/rot13-password-factory</url>
   </ciManagement>
 
   <issueManagement>
-    <url>https://github.com/marschall/rot13-password-provider/issues</url>
+    <url>https://github.com/marschall/rot13-password-factory/issues</url>
     <system>GitHub Issues</system>
   </issueManagement>
 
   <scm>
-    <connection>scm:git:git@github.com:marschall/rot13-password-provider.git</connection>
-    <developerConnection>scm:git:git@github.com:marschall/rot13-password-provider.git</developerConnection>
+    <connection>scm:git:git@github.com:marschall/rot13-password-factory.git</connection>
+    <developerConnection>scm:git:git@github.com:marschall/rot13-password-factory.git</developerConnection>
     <url>${project.url}</url>
     <tag>HEAD</tag>
   </scm>
@@ -88,13 +88,6 @@
         </executions>
       </plugin>
       <plugin>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <configuration>
-          <forkMode>once</forkMode>
-          <argLine>-Djava.security.properties=${project.basedir}/src/test/resources/jvm.java.security</argLine>
-        </configuration>
-      </plugin>
-      <plugin>
         <artifactId>maven-source-plugin</artifactId>
         <executions>
           <execution>
@@ -104,6 +97,13 @@
             </goals>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <forkMode>once</forkMode>
+          <argLine>-Djava.security.properties=${project.basedir}/src/test/resources/jvm.java.security</argLine>
+        </configuration>
       </plugin>
       <plugin>
         <artifactId>maven-release-plugin</artifactId>
